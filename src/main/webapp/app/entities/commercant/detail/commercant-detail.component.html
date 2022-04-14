@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="commercant">
+      <h2 data-cy="commercantDetailsHeading"><span jhiTranslate="coopCycleJHipsterApp.commercant.detail.title">Commercant</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ commercant.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.commercant.shopRating">Shop Rating</span></dt>
+        <dd>
+          <span>{{ commercant.shopRating }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.commercant.isOpen">Is Open</span></dt>
+        <dd>
+          <span>{{ commercant.isOpen }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.commercant.averageDeliveryTime">Average Delivery Time</span></dt>
+        <dd>
+          <span>{{ commercant.averageDeliveryTime }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.commercant.openingTime">Opening Time</span></dt>
+        <dd>
+          <span>{{ commercant.openingTime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.commercant.closingTime">Closing Time</span></dt>
+        <dd>
+          <span>{{ commercant.closingTime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.commercant.tags">Tags</span></dt>
+        <dd>
+          <span>{{ commercant.tags }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.commercant.user">User</span></dt>
+        <dd>
+          <span>{{ commercant.user?.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.commercant.cooperative">Cooperative</span></dt>
+        <dd>
+          <div *ngIf="commercant.cooperative">
+            <a [routerLink]="['/cooperative', commercant.cooperative?.id, 'view']">{{ commercant.cooperative?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/commercant', commercant.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

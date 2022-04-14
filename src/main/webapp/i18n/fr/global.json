@@ -1,12 +1,18 @@
 {
   "global": {
-    "title": "CoopCycleJHipster",
+    "title": "Bienvenu dans CoopCycleJHipster",
     "browsehappy": "Vous utilisez un <strong>ancien</strong> navigateur. Veuillez <a href=\"http://browsehappy.com/?locale=fr\">mettre à jour votre navigateur</a> pour une meilleure expérience.",
     "menu": {
       "home": "Accueil",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entités",
+        "client": "Client",
+        "livreur": "Livreur",
+        "commercant": "Commercant",
+        "cooperative": "Cooperative",
+        "commande": "Commande",
+        "paiement": "Paiement",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -137,5 +143,5 @@
       "not.image": "Le fichier doit être une image et non du type \"{{ fileType }}\""
     }
   },
-  "footer": "Ceci est votre pied de page"
+  "footer": "Clara Bernerd"
 }

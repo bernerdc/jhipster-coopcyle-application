@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="commande">
+      <h2 data-cy="commandeDetailsHeading"><span jhiTranslate="coopCycleJHipsterApp.commande.detail.title">Commande</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ commande.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.commande.pickupAddress">Pickup Address</span></dt>
+        <dd>
+          <span>{{ commande.pickupAddress }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.commande.deliveryAddress">Delivery Address</span></dt>
+        <dd>
+          <span>{{ commande.deliveryAddress }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.commande.client">Client</span></dt>
+        <dd>
+          <div *ngIf="commande.client">
+            <a [routerLink]="['/client', commande.client?.id, 'view']">{{ commande.client?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.commande.livreur">Livreur</span></dt>
+        <dd>
+          <div *ngIf="commande.livreur">
+            <a [routerLink]="['/livreur', commande.livreur?.id, 'view']">{{ commande.livreur?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.commande.commercant">Commercant</span></dt>
+        <dd>
+          <div *ngIf="commande.commercant">
+            <a [routerLink]="['/commercant', commande.commercant?.id, 'view']">{{ commande.commercant?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/commande', commande.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

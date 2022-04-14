@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="livreur">
+      <h2 data-cy="livreurDetailsHeading"><span jhiTranslate="coopCycleJHipsterApp.livreur.detail.title">Livreur</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ livreur.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.livreur.vehicleType">Vehicle Type</span></dt>
+        <dd>
+          <span>{{ livreur.vehicleType }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.livreur.totalEarnings">Total Earnings</span></dt>
+        <dd>
+          <span>{{ livreur.totalEarnings }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.livreur.totalRides">Total Rides</span></dt>
+        <dd>
+          <span>{{ livreur.totalRides }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.livreur.transporterRating">Transporter Rating</span></dt>
+        <dd>
+          <span>{{ livreur.transporterRating }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.livreur.user">User</span></dt>
+        <dd>
+          <span>{{ livreur.user?.id }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/livreur', livreur.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

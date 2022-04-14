@@ -1,0 +1,26 @@
+{
+  "coopCycleJHipsterApp": {
+    "cooperative": {
+      "home": {
+        "title": "Cooperatives",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Maak een nieuwe Cooperative",
+        "createOrEditLabel": "Maak of wijzig een Cooperative",
+        "notFound": "No Cooperatives found"
+      },
+      "created": "A new Cooperative is created with identifier {{ param }}",
+      "updated": "A Cooperative is updated with identifier {{ param }}",
+      "deleted": "A Cooperative is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Cooperative {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Cooperative"
+      },
+      "id": "ID",
+      "city": "City",
+      "shopCount": "Shop Count",
+      "commercant": "Commercant"
+    }
+  }
+}

@@ -100,6 +100,7 @@
   },
   "defaultProject": "coop-cycle-j-hipster",
   "cli": {
+    "analytics": "7244c003-1c65-4a1f-b202-25840aa5ce3b",
     "cache": {
       "enabled": true,
       "path": "./target/angular/",

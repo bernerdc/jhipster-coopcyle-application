@@ -1,0 +1,102 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-paiement-heading"
+        data-cy="PaiementCreateUpdateHeading"
+        jhiTranslate="coopCycleJHipsterApp.paiement.home.createOrEditLabel"
+      >
+        Create or edit a Paiement
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopCycleJHipsterApp.paiement.amount" for="field_amount">Amount</label>
+          <input type="number" class="form-control" name="amount" id="field_amount" data-cy="amount" formControlName="amount" />
+          <div *ngIf="editForm.get('amount')!.invalid && (editForm.get('amount')!.dirty || editForm.get('amount')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('amount')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small class="form-text text-danger" [hidden]="!editForm.get('amount')?.errors?.number" jhiTranslate="entity.validation.number">
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopCycleJHipsterApp.paiement.paiementType" for="field_paiementType">Paiement Type</label>
+          <input
+            type="text"
+            class="form-control"
+            name="paiementType"
+            id="field_paiementType"
+            data-cy="paiementType"
+            formControlName="paiementType"
+          />
+          <div
+            *ngIf="editForm.get('paiementType')!.invalid && (editForm.get('paiementType')!.dirty || editForm.get('paiementType')!.touched)"
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('paiementType')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopCycleJHipsterApp.paiement.client" for="field_client">Client</label>
+          <select class="form-control" id="field_client" data-cy="client" name="client" formControlName="client">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="clientOption.id === editForm.get('client')!.value?.id ? editForm.get('client')!.value : clientOption"
+              *ngFor="let clientOption of clientsSharedCollection; trackBy: trackClientById"
+            >
+              {{ clientOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopCycleJHipsterApp.paiement.commercant" for="field_commercant">Commercant</label>
+          <select class="form-control" id="field_commercant" data-cy="commercant" name="commercant" formControlName="commercant">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                commercantOption.id === editForm.get('commercant')!.value?.id ? editForm.get('commercant')!.value : commercantOption
+              "
+              *ngFor="let commercantOption of commercantsSharedCollection; trackBy: trackCommercantById"
+            >
+              {{ commercantOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

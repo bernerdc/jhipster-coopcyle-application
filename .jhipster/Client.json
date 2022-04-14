@@ -1,0 +1,44 @@
+{
+  "applications": "*",
+  "changelogDate": "20220414092432",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "client",
+  "fields": [
+    {
+      "fieldName": "walletBalance",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "orderCount",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Client",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "client",
+      "ownerSide": true,
+      "relationshipName": "user",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "commande",
+      "otherEntityRelationshipName": "client",
+      "relationshipName": "commande",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "paiement",
+      "otherEntityRelationshipName": "client",
+      "relationshipName": "paiement",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

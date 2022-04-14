@@ -1,0 +1,27 @@
+{
+  "coopCycleJHipsterApp": {
+    "paiement": {
+      "home": {
+        "title": "Paiements",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Paiement",
+        "createOrEditLabel": "创建或编辑 Paiement",
+        "notFound": "No Paiements found"
+      },
+      "created": "Paiement {{ param }} 创建成功",
+      "updated": "Paiement {{ param }} 更新成功",
+      "deleted": "Paiement {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Paiement {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Paiement"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "paiementType": "Paiement Type",
+      "client": "Client",
+      "commercant": "Commercant"
+    }
+  }
+}

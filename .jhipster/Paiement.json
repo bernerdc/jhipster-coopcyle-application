@@ -1,0 +1,39 @@
+{
+  "applications": "*",
+  "changelogDate": "20220414092437",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "paiement",
+  "fields": [
+    {
+      "fieldName": "amount",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "paiementType",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Paiement",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "client",
+      "otherEntityRelationshipName": "paiement",
+      "relationshipName": "client",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "commercant",
+      "otherEntityRelationshipName": "paiement",
+      "relationshipName": "commercant",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

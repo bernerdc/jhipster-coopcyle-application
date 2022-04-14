@@ -1,0 +1,33 @@
+{
+  "coopCycleJHipsterApp": {
+    "commercant": {
+      "home": {
+        "title": "Commercants",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Commercant",
+        "createOrEditLabel": "创建或编辑 Commercant",
+        "notFound": "No Commercants found"
+      },
+      "created": "Commercant {{ param }} 创建成功",
+      "updated": "Commercant {{ param }} 更新成功",
+      "deleted": "Commercant {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Commercant {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Commercant"
+      },
+      "id": "ID",
+      "shopRating": "Shop Rating",
+      "isOpen": "Is Open",
+      "averageDeliveryTime": "Average Delivery Time",
+      "openingTime": "Opening Time",
+      "closingTime": "Closing Time",
+      "tags": "Tags",
+      "user": "User",
+      "commande": "Commande",
+      "paiement": "Paiement",
+      "cooperative": "Cooperative"
+    }
+  }
+}

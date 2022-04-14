@@ -1,0 +1,33 @@
+{
+  "coopCycleJHipsterApp": {
+    "commercant": {
+      "home": {
+        "title": "Commercants",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Genera un nuovo Commercant",
+        "createOrEditLabel": "Genera o modifica un Commercant",
+        "notFound": "No Commercants found"
+      },
+      "created": "&Egrave; stato generato un nuovo Commercant con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Commercant identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Commercant con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Commercant {{ id }}?"
+      },
+      "detail": {
+        "title": "Commercant"
+      },
+      "id": "ID",
+      "shopRating": "Shop Rating",
+      "isOpen": "Is Open",
+      "averageDeliveryTime": "Average Delivery Time",
+      "openingTime": "Opening Time",
+      "closingTime": "Closing Time",
+      "tags": "Tags",
+      "user": "User",
+      "commande": "Commande",
+      "paiement": "Paiement",
+      "cooperative": "Cooperative"
+    }
+  }
+}

@@ -1,0 +1,98 @@
+<div>
+  <h2 id="page-heading" data-cy="CommercantHeading">
+    <span jhiTranslate="coopCycleJHipsterApp.commercant.home.title">Commercants</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="coopCycleJHipsterApp.commercant.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-commercant"
+        [routerLink]="['/commercant/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="coopCycleJHipsterApp.commercant.home.createLabel"> Create a new Commercant </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="commercants?.length === 0">
+    <span jhiTranslate="coopCycleJHipsterApp.commercant.home.notFound">No commercants found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="commercants && commercants.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="coopCycleJHipsterApp.commercant.shopRating">Shop Rating</span></th>
+          <th scope="col"><span jhiTranslate="coopCycleJHipsterApp.commercant.isOpen">Is Open</span></th>
+          <th scope="col"><span jhiTranslate="coopCycleJHipsterApp.commercant.averageDeliveryTime">Average Delivery Time</span></th>
+          <th scope="col"><span jhiTranslate="coopCycleJHipsterApp.commercant.openingTime">Opening Time</span></th>
+          <th scope="col"><span jhiTranslate="coopCycleJHipsterApp.commercant.closingTime">Closing Time</span></th>
+          <th scope="col"><span jhiTranslate="coopCycleJHipsterApp.commercant.tags">Tags</span></th>
+          <th scope="col"><span jhiTranslate="coopCycleJHipsterApp.commercant.user">User</span></th>
+          <th scope="col"><span jhiTranslate="coopCycleJHipsterApp.commercant.cooperative">Cooperative</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let commercant of commercants; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/commercant', commercant.id, 'view']">{{ commercant.id }}</a>
+          </td>
+          <td>{{ commercant.shopRating }}</td>
+          <td>{{ commercant.isOpen }}</td>
+          <td>{{ commercant.averageDeliveryTime }}</td>
+          <td>{{ commercant.openingTime | formatMediumDatetime }}</td>
+          <td>{{ commercant.closingTime | formatMediumDatetime }}</td>
+          <td>{{ commercant.tags }}</td>
+          <td>
+            {{ commercant.user?.id }}
+          </td>
+          <td>
+            <div *ngIf="commercant.cooperative">
+              <a [routerLink]="['/cooperative', commercant.cooperative?.id, 'view']">{{ commercant.cooperative?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/commercant', commercant.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/commercant', commercant.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(commercant)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

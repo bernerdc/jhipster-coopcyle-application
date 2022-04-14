@@ -1,0 +1,43 @@
+{
+  "applications": "*",
+  "changelogDate": "20220414092436",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "commande",
+  "fields": [
+    {
+      "fieldName": "pickupAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deliveryAddress",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Commande",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "client",
+      "otherEntityRelationshipName": "commande",
+      "relationshipName": "client",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "livreur",
+      "otherEntityRelationshipName": "commande",
+      "relationshipName": "livreur",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "commercant",
+      "otherEntityRelationshipName": "commande",
+      "relationshipName": "commercant",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

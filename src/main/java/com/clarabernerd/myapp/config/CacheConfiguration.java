@@ -48,6 +48,18 @@ public class CacheConfiguration {
             createCache(cm, com.clarabernerd.myapp.domain.User.class.getName());
             createCache(cm, com.clarabernerd.myapp.domain.Authority.class.getName());
             createCache(cm, com.clarabernerd.myapp.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.clarabernerd.myapp.domain.Client.class.getName());
+            createCache(cm, com.clarabernerd.myapp.domain.Client.class.getName() + ".commandes");
+            createCache(cm, com.clarabernerd.myapp.domain.Client.class.getName() + ".paiements");
+            createCache(cm, com.clarabernerd.myapp.domain.Livreur.class.getName());
+            createCache(cm, com.clarabernerd.myapp.domain.Livreur.class.getName() + ".commandes");
+            createCache(cm, com.clarabernerd.myapp.domain.Commercant.class.getName());
+            createCache(cm, com.clarabernerd.myapp.domain.Commercant.class.getName() + ".commandes");
+            createCache(cm, com.clarabernerd.myapp.domain.Commercant.class.getName() + ".paiements");
+            createCache(cm, com.clarabernerd.myapp.domain.Cooperative.class.getName());
+            createCache(cm, com.clarabernerd.myapp.domain.Cooperative.class.getName() + ".commercants");
+            createCache(cm, com.clarabernerd.myapp.domain.Commande.class.getName());
+            createCache(cm, com.clarabernerd.myapp.domain.Paiement.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,132 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-commercant-heading"
+        data-cy="CommercantCreateUpdateHeading"
+        jhiTranslate="coopCycleJHipsterApp.commercant.home.createOrEditLabel"
+      >
+        Create or edit a Commercant
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopCycleJHipsterApp.commercant.shopRating" for="field_shopRating">Shop Rating</label>
+          <input
+            type="text"
+            class="form-control"
+            name="shopRating"
+            id="field_shopRating"
+            data-cy="shopRating"
+            formControlName="shopRating"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopCycleJHipsterApp.commercant.isOpen" for="field_isOpen">Is Open</label>
+          <input type="checkbox" class="form-check" name="isOpen" id="field_isOpen" data-cy="isOpen" formControlName="isOpen" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopCycleJHipsterApp.commercant.averageDeliveryTime" for="field_averageDeliveryTime"
+            >Average Delivery Time</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="averageDeliveryTime"
+            id="field_averageDeliveryTime"
+            data-cy="averageDeliveryTime"
+            formControlName="averageDeliveryTime"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopCycleJHipsterApp.commercant.openingTime" for="field_openingTime">Opening Time</label>
+          <div class="d-flex">
+            <input
+              id="field_openingTime"
+              data-cy="openingTime"
+              type="datetime-local"
+              class="form-control"
+              name="openingTime"
+              formControlName="openingTime"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopCycleJHipsterApp.commercant.closingTime" for="field_closingTime">Closing Time</label>
+          <div class="d-flex">
+            <input
+              id="field_closingTime"
+              data-cy="closingTime"
+              type="datetime-local"
+              class="form-control"
+              name="closingTime"
+              formControlName="closingTime"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopCycleJHipsterApp.commercant.tags" for="field_tags">Tags</label>
+          <input type="text" class="form-control" name="tags" id="field_tags" data-cy="tags" formControlName="tags" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopCycleJHipsterApp.commercant.user" for="field_user">User</label>
+          <select class="form-control" id="field_user" data-cy="user" name="user" formControlName="user">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="userOption.id === editForm.get('user')!.value?.id ? editForm.get('user')!.value : userOption"
+              *ngFor="let userOption of usersSharedCollection; trackBy: trackUserById"
+            >
+              {{ userOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopCycleJHipsterApp.commercant.cooperative" for="field_cooperative">Cooperative</label>
+          <select class="form-control" id="field_cooperative" data-cy="cooperative" name="cooperative" formControlName="cooperative">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                cooperativeOption.id === editForm.get('cooperative')!.value?.id ? editForm.get('cooperative')!.value : cooperativeOption
+              "
+              *ngFor="let cooperativeOption of cooperativesSharedCollection; trackBy: trackCooperativeById"
+            >
+              {{ cooperativeOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

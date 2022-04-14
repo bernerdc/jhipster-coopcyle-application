@@ -1,0 +1,46 @@
+{
+  "applications": "*",
+  "changelogDate": "20220414092433",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "livreur",
+  "fields": [
+    {
+      "fieldName": "vehicleType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "totalEarnings",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "totalRides",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "transporterRating",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Livreur",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "livreur",
+      "ownerSide": true,
+      "relationshipName": "user",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "commande",
+      "otherEntityRelationshipName": "livreur",
+      "relationshipName": "commande",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

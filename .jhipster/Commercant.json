@@ -1,0 +1,66 @@
+{
+  "applications": "*",
+  "changelogDate": "20220414092434",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "commercant",
+  "fields": [
+    {
+      "fieldName": "shopRating",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isOpen",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "averageDeliveryTime",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "openingTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "closingTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "tags",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Commercant",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "commercant",
+      "ownerSide": true,
+      "relationshipName": "user",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "commande",
+      "otherEntityRelationshipName": "commercant",
+      "relationshipName": "commande",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "paiement",
+      "otherEntityRelationshipName": "commercant",
+      "relationshipName": "paiement",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "cooperative",
+      "otherEntityRelationshipName": "commercant",
+      "relationshipName": "cooperative",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}
