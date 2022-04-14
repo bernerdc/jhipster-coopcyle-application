@@ -1,0 +1,89 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-delivery-man-heading"
+        data-cy="DeliveryManCreateUpdateHeading"
+        jhiTranslate="coopCycleJHipsterApp.deliveryMan.home.createOrEditLabel"
+      >
+        Create or edit a Delivery Man
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopCycleJHipsterApp.deliveryMan.vehicle" for="field_vehicle">Vehicle</label>
+          <input type="text" class="form-control" name="vehicle" id="field_vehicle" data-cy="vehicle" formControlName="vehicle" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopCycleJHipsterApp.deliveryMan.numberOfEarnings" for="field_numberOfEarnings"
+            >Number Of Earnings</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="numberOfEarnings"
+            id="field_numberOfEarnings"
+            data-cy="numberOfEarnings"
+            formControlName="numberOfEarnings"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopCycleJHipsterApp.deliveryMan.numberOfRides" for="field_numberOfRides"
+            >Number Of Rides</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="numberOfRides"
+            id="field_numberOfRides"
+            data-cy="numberOfRides"
+            formControlName="numberOfRides"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopCycleJHipsterApp.deliveryMan.rating" for="field_rating">Rating</label>
+          <input type="text" class="form-control" name="rating" id="field_rating" data-cy="rating" formControlName="rating" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="coopCycleJHipsterApp.deliveryMan.user" for="field_user">User</label>
+          <select class="form-control" id="field_user" data-cy="user" name="user" formControlName="user">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="userOption.id === editForm.get('user')!.value?.id ? editForm.get('user')!.value : userOption"
+              *ngFor="let userOption of usersSharedCollection; trackBy: trackUserById"
+            >
+              {{ userOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

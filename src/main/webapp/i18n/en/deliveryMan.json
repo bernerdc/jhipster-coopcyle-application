@@ -1,0 +1,29 @@
+{
+  "coopCycleJHipsterApp": {
+    "deliveryMan": {
+      "home": {
+        "title": "Delivery Men",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Delivery Man",
+        "createOrEditLabel": "Create or edit a Delivery Man",
+        "notFound": "No Delivery Men found"
+      },
+      "created": "A new Delivery Man is created with identifier {{ param }}",
+      "updated": "A Delivery Man is updated with identifier {{ param }}",
+      "deleted": "A Delivery Man is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Delivery Man {{ id }}?"
+      },
+      "detail": {
+        "title": "Delivery Man"
+      },
+      "id": "ID",
+      "vehicle": "Vehicle",
+      "numberOfEarnings": "Number Of Earnings",
+      "numberOfRides": "Number Of Rides",
+      "rating": "Rating",
+      "user": "User",
+      "order": "Order"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "coopCycleJHipsterApp": {
+    "trader": {
+      "home": {
+        "title": "Traders",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Trader",
+        "createOrEditLabel": "创建或编辑 Trader",
+        "notFound": "No Traders found"
+      },
+      "created": "Trader {{ param }} 创建成功",
+      "updated": "Trader {{ param }} 更新成功",
+      "deleted": "Trader {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Trader {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Trader"
+      },
+      "id": "ID",
+      "shopRating": "Shop Rating",
+      "isOpen": "Is Open",
+      "averageDeliveryTime": "Average Delivery Time",
+      "openingTime": "Opening Time",
+      "closingTime": "Closing Time",
+      "tags": "Tags",
+      "user": "User",
+      "order": "Order",
+      "payment": "Payment",
+      "cooperative": "Cooperative"
+    }
+  }
+}

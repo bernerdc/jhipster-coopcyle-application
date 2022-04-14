@@ -34,6 +34,26 @@ import { RouterModule } from '@angular/router';
         data: { pageTitle: 'coopCycleJHipsterApp.paiement.home.title' },
         loadChildren: () => import('./paiement/paiement.module').then(m => m.PaiementModule),
       },
+      {
+        path: 'delivery-man',
+        data: { pageTitle: 'coopCycleJHipsterApp.deliveryMan.home.title' },
+        loadChildren: () => import('./delivery-man/delivery-man.module').then(m => m.DeliveryManModule),
+      },
+      {
+        path: 'trader',
+        data: { pageTitle: 'coopCycleJHipsterApp.trader.home.title' },
+        loadChildren: () => import('./trader/trader.module').then(m => m.TraderModule),
+      },
+      {
+        path: 'order',
+        data: { pageTitle: 'coopCycleJHipsterApp.order.home.title' },
+        loadChildren: () => import('./order/order.module').then(m => m.OrderModule),
+      },
+      {
+        path: 'payment',
+        data: { pageTitle: 'coopCycleJHipsterApp.payment.home.title' },
+        loadChildren: () => import('./payment/payment.module').then(m => m.PaymentModule),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],

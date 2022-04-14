@@ -1,0 +1,88 @@
+<div>
+  <h2 id="page-heading" data-cy="TraderHeading">
+    <span jhiTranslate="coopCycleJHipsterApp.trader.home.title">Traders</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="coopCycleJHipsterApp.trader.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-trader"
+        [routerLink]="['/trader/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="coopCycleJHipsterApp.trader.home.createLabel"> Create a new Trader </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="traders?.length === 0">
+    <span jhiTranslate="coopCycleJHipsterApp.trader.home.notFound">No traders found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="traders && traders.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="coopCycleJHipsterApp.trader.shopRating">Shop Rating</span></th>
+          <th scope="col"><span jhiTranslate="coopCycleJHipsterApp.trader.isOpen">Is Open</span></th>
+          <th scope="col"><span jhiTranslate="coopCycleJHipsterApp.trader.averageDeliveryTime">Average Delivery Time</span></th>
+          <th scope="col"><span jhiTranslate="coopCycleJHipsterApp.trader.openingTime">Opening Time</span></th>
+          <th scope="col"><span jhiTranslate="coopCycleJHipsterApp.trader.closingTime">Closing Time</span></th>
+          <th scope="col"><span jhiTranslate="coopCycleJHipsterApp.trader.tags">Tags</span></th>
+          <th scope="col"><span jhiTranslate="coopCycleJHipsterApp.trader.user">User</span></th>
+          <th scope="col"><span jhiTranslate="coopCycleJHipsterApp.trader.cooperative">Cooperative</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let trader of traders; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/trader', trader.id, 'view']">{{ trader.id }}</a>
+          </td>
+          <td>{{ trader.shopRating }}</td>
+          <td>{{ trader.isOpen }}</td>
+          <td>{{ trader.averageDeliveryTime }}</td>
+          <td>{{ trader.openingTime | formatMediumDatetime }}</td>
+          <td>{{ trader.closingTime | formatMediumDatetime }}</td>
+          <td>{{ trader.tags }}</td>
+          <td>
+            {{ trader.user?.id }}
+          </td>
+          <td>
+            <div *ngIf="trader.cooperative">
+              <a [routerLink]="['/cooperative', trader.cooperative?.id, 'view']">{{ trader.cooperative?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/trader', trader.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/trader', trader.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(trader)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

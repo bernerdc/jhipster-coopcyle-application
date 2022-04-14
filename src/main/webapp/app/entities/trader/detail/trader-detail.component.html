@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="trader">
+      <h2 data-cy="traderDetailsHeading"><span jhiTranslate="coopCycleJHipsterApp.trader.detail.title">Trader</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ trader.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.trader.shopRating">Shop Rating</span></dt>
+        <dd>
+          <span>{{ trader.shopRating }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.trader.isOpen">Is Open</span></dt>
+        <dd>
+          <span>{{ trader.isOpen }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.trader.averageDeliveryTime">Average Delivery Time</span></dt>
+        <dd>
+          <span>{{ trader.averageDeliveryTime }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.trader.openingTime">Opening Time</span></dt>
+        <dd>
+          <span>{{ trader.openingTime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.trader.closingTime">Closing Time</span></dt>
+        <dd>
+          <span>{{ trader.closingTime | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.trader.tags">Tags</span></dt>
+        <dd>
+          <span>{{ trader.tags }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.trader.user">User</span></dt>
+        <dd>
+          <span>{{ trader.user?.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopCycleJHipsterApp.trader.cooperative">Cooperative</span></dt>
+        <dd>
+          <div *ngIf="trader.cooperative">
+            <a [routerLink]="['/cooperative', trader.cooperative?.id, 'view']">{{ trader.cooperative?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/trader', trader.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

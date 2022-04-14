@@ -1,0 +1,43 @@
+{
+  "applications": "*",
+  "changelogDate": "20220414103431",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "jhi_order",
+  "fields": [
+    {
+      "fieldName": "pickupAddr",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deliveryAddr",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Order",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "client",
+      "otherEntityRelationshipName": "order",
+      "relationshipName": "client",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "deliveryMan",
+      "otherEntityRelationshipName": "order",
+      "relationshipName": "deliveryMan",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "trader",
+      "otherEntityRelationshipName": "order",
+      "relationshipName": "trader",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

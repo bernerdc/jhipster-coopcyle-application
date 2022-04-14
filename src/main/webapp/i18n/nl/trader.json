@@ -1,0 +1,33 @@
+{
+  "coopCycleJHipsterApp": {
+    "trader": {
+      "home": {
+        "title": "Traders",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Maak een nieuwe Trader",
+        "createOrEditLabel": "Maak of wijzig een Trader",
+        "notFound": "No Traders found"
+      },
+      "created": "A new Trader is created with identifier {{ param }}",
+      "updated": "A Trader is updated with identifier {{ param }}",
+      "deleted": "A Trader is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Trader {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Trader"
+      },
+      "id": "ID",
+      "shopRating": "Shop Rating",
+      "isOpen": "Is Open",
+      "averageDeliveryTime": "Average Delivery Time",
+      "openingTime": "Opening Time",
+      "closingTime": "Closing Time",
+      "tags": "Tags",
+      "user": "User",
+      "order": "Order",
+      "payment": "Payment",
+      "cooperative": "Cooperative"
+    }
+  }
+}

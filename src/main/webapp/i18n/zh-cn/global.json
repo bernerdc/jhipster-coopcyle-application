@@ -13,6 +13,10 @@
         "cooperative": "Cooperative",
         "commande": "Commande",
         "paiement": "Paiement",
+        "deliveryMan": "Delivery Man",
+        "trader": "Trader",
+        "order": "Order",
+        "payment": "Payment",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

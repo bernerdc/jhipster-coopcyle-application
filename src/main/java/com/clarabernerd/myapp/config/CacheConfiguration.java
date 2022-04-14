@@ -60,6 +60,16 @@ public class CacheConfiguration {
             createCache(cm, com.clarabernerd.myapp.domain.Cooperative.class.getName() + ".commercants");
             createCache(cm, com.clarabernerd.myapp.domain.Commande.class.getName());
             createCache(cm, com.clarabernerd.myapp.domain.Paiement.class.getName());
+            createCache(cm, com.clarabernerd.myapp.domain.Client.class.getName() + ".orders");
+            createCache(cm, com.clarabernerd.myapp.domain.Client.class.getName() + ".payments");
+            createCache(cm, com.clarabernerd.myapp.domain.Cooperative.class.getName() + ".traders");
+            createCache(cm, com.clarabernerd.myapp.domain.DeliveryMan.class.getName());
+            createCache(cm, com.clarabernerd.myapp.domain.DeliveryMan.class.getName() + ".orders");
+            createCache(cm, com.clarabernerd.myapp.domain.Trader.class.getName());
+            createCache(cm, com.clarabernerd.myapp.domain.Trader.class.getName() + ".orders");
+            createCache(cm, com.clarabernerd.myapp.domain.Trader.class.getName() + ".payments");
+            createCache(cm, com.clarabernerd.myapp.domain.Order.class.getName());
+            createCache(cm, com.clarabernerd.myapp.domain.Payment.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

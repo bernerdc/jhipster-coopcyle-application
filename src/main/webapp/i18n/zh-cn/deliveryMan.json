@@ -1,0 +1,29 @@
+{
+  "coopCycleJHipsterApp": {
+    "deliveryMan": {
+      "home": {
+        "title": "Delivery Men",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Delivery Man",
+        "createOrEditLabel": "创建或编辑 Delivery Man",
+        "notFound": "No Delivery Men found"
+      },
+      "created": "Delivery Man {{ param }} 创建成功",
+      "updated": "Delivery Man {{ param }} 更新成功",
+      "deleted": "Delivery Man {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Delivery Man {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Delivery Man"
+      },
+      "id": "ID",
+      "vehicle": "Vehicle",
+      "numberOfEarnings": "Number Of Earnings",
+      "numberOfRides": "Number Of Rides",
+      "rating": "Rating",
+      "user": "User",
+      "order": "Order"
+    }
+  }
+}
